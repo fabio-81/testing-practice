@@ -6,33 +6,36 @@ if (num1 === undefined) num1 = 0;
 if (num2 === undefined) num2 = 0;
 return num1 + num2;
 }
+
 function subtract(num1, num2){
-  if (num1 === undefined) num1 = 0;
-  if (num2 === undefined) num2 = 0;
-  return num1 - num2;
+if (num1 === undefined) num1 = 0;
+if (num2 === undefined) num2 = 0;
+return num1 - num2;
   }
 
-  function multiply(num1, num2) {
-    if (num1 == undefined) num1 = 0;
-    if (num2 == undefined) num2 = 0;
-  return num1 * num2;
-  }
+function multiply(num1, num2) {
+if (num1 == undefined) num1 = 0;
+if (num2 == undefined) num2 = 0;
+return num1 * num2;
+}
   
-  function divide(num1, num2) {
-    if (num1 == undefined) num1 = 0;
+function divide(num1, num2) {
+if (num1 == undefined) num1 = 0;
+if (num2 == undefined) num2 = 0;
+return num1 / num2;
+}
 
-    if (num2 == undefined) num2 = 0;
-  return num1 / num2;
-  }
-
+  
 function calc(operation, num1, num2) {
 switch(operation){
 case 'add': return sum(num1, num2);
 case 'subtract': return subtract(num1, num2);
 case 'multiply': return multiply(num1, num2)
 case 'divide': return divide(num1, num2)
+default : return 'Operation not supported.'
+  }
 }
-}
+
 //===============================================
 // DEFINE AND EXECUTE TEST CASES
 // ==================================================
@@ -66,6 +69,9 @@ if (result !== 81) throw new error('Expected calc("multiply", 9, 9) to be 81. Re
   // Test Case 5
   // --------------------------------------------------
   // It should return the message 'Operation not supported.' when the user provides: exponent, 2, 8.
+
+  var result = calc('exponent', 2, 8)
+  if (result !== 'Operation not supported.') throw new error('Expected calc("Operation not supported.", 2, 8) to be "Operation not supported.". Received: ' + result)
 
   console.log('All tests passed successfully.');
 
